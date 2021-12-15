@@ -1,3 +1,9 @@
+import React from 'react';
+import { addDecorator } from '@storybook/react';
+import Center from '../src/components/Center/Center';
+
+addDecorator( story => <Center>{ story() }</Center> );   //  Decorador: A este nivel funciona como un envoltorio global para todas las Stories (Requiere reiniciar el servidor de Storybook). 
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from './Button';
-import Center from '../Center/Center';
 
 export default {
     title: 'Form/Button',        //   (Obligatorio): Nombre que se desplegara en el menu de Storybook
@@ -8,7 +7,6 @@ export default {
     args: {
         children: 'Button'       //   Establece el estado del componente por defecto
     },
-    decorators: [ story => <Center>{ story() }</Center>]    //  Decorador: A este nivel funciona como un envoltorio de todas las Stories del Componente
 }
 
 // Stories: Historias o Variaciones del mismo componente
