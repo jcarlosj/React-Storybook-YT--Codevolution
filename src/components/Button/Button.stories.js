@@ -19,23 +19,23 @@ const Template = args => <Button { ...args } />;
 export const PrimaryButton = Template.bind({});
 PrimaryButton.args = {
     variant: 'primary',
-    children: 'Primary Args'
+    children: 'Button with Args'
 }
 
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = {
-    variant: 'secondary',
-    children: 'Secondary Args'
+    ...PrimaryButton.args,
+    variant: 'secondary'
 }
 
 export const SuccessButton = Template.bind({});
 SuccessButton.args = {
-    variant: 'success',
-    children: 'Success Args'
+    ...PrimaryButton.args,
+    variant: 'success'
 }
 
 export const DangerButton = Template.bind({});
 DangerButton.args = {
-    variant: 'danger',
-    children: 'Danger Args'
+    ...PrimaryButton.args,
+    variant: 'danger'
 }
