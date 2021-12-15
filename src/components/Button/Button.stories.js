@@ -3,7 +3,10 @@ import Button from './Button';
 
 export default {
     title: 'Form/Button',        //   (Obligatorio): Nombre que se desplegara en el menu de Storybook
-    component: Button       //   (Opcional):    Componente que se desea asociar
+    component: Button,           //   (Opcional):    Componente que se desea asociar
+    args: {
+        children: 'Button'       //   Establece el estado del componente por defecto
+    }
 }
 
 // Stories: Historias o Variaciones del mismo componente
@@ -19,23 +22,21 @@ const Template = args => <Button { ...args } />;
 export const PrimaryButton = Template.bind({});
 PrimaryButton.args = {
     variant: 'primary',
-    children: 'Button with Args'
+    children: 'Button with Args'    //  Reescribira valores establecidos por defecto en el componente
 }
 
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = {
-    ...PrimaryButton.args,
+    ...PrimaryButton.args,          //  Reescribira valores establecidos por defecto en el componente
     variant: 'secondary'
 }
 
 export const SuccessButton = Template.bind({});
 SuccessButton.args = {
-    ...PrimaryButton.args,
     variant: 'success'
 }
 
 export const DangerButton = Template.bind({});
 DangerButton.args = {
-    ...PrimaryButton.args,
     variant: 'danger'
 }
