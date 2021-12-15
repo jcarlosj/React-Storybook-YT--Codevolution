@@ -7,14 +7,15 @@ export default {
     component: Button,           //   (Opcional):    Componente que se desea asociar
     args: {
         children: 'Button'       //   Establece el estado del componente por defecto
-    }
+    },
+    decorators: [ story => <Center>{ story() }</Center>]    //  Decorador: A este nivel funciona como un envoltorio de todas las Stories del Componente
 }
 
 // Stories: Historias o Variaciones del mismo componente
-export const Primary = () => <Center><Button variant='primary'>Primary</Button></Center>;
-export const Secondary = () => <Center><Button variant='secondary'>Secondary</Button></Center>;
-export const Success = () => <Center><Button variant='success'>Success</Button></Center>;
-export const Danger = () => <Center><Button variant='danger'>Danger</Button></Center>;
+export const Primary = () => <Button variant='primary'>Primary</Button>;
+export const Secondary = () => <Button variant='secondary'>Secondary</Button>;
+export const Success = () => <Button variant='success'>Success</Button>;
+export const Danger = () => <Button variant='danger'>Danger</Button>;
 
 // Crea una plantilla para evitar la repeticion del cuerpo del componente
 const Template = args => <Button { ...args } />;        
