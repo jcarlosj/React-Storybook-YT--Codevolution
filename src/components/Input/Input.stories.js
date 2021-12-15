@@ -2,7 +2,7 @@ import React from 'react';
 import Input from './Input';
 
 export default {
-    title: 'Input',     //   (Obligatorio): Nombre que se desplegara en el menu de Storybook
+    title: 'Form/Input',     //   (Obligatorio): Nombre que se desplegara en el menu de Storybook
     component: Input    //   (Opcional):    Componente que se desea asociar
 }
 
