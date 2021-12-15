@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 export default {
-    title: 'Form/Control/Button',        //   (Obligatorio): Nombre que se desplegara en el menu de Storybook
+    title: 'Form/Button',        //   (Obligatorio): Nombre que se desplegara en el menu de Storybook
     component: Button       //   (Opcional):    Componente que se desea asociar
 }
 
