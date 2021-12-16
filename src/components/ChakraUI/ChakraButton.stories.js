@@ -22,7 +22,10 @@ export default {
             control: { type: 'select' }
         },
         onClick: {
-            action: 'clicked'
+            action: 'Clicked!'
+        },
+        onMouseOver: {
+            action: 'MouseOver!'
         }
     }
 }
