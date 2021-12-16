@@ -14,7 +14,7 @@ export default {
 // Stories: Historias o Variaciones del mismo componente
 export const Primary = () => <Button onClick={ action( 'Primary Cliked!' ) } variant='primary'>Primary</Button>;
 export const Secondary = () => <Button variant='secondary' { ...actions( 'onClick', 'onMouseOver' ) } >Secondary</Button>;
-export const Success = () => <Button variant='success'>Success</Button>;
+export const Success = () => <Button variant='success' onClick={ () => console.log( 'Success!' ) }>Success</Button>;
 export const Danger = () => <Button variant='danger'>Danger</Button>;
 
 // Crea una plantilla para evitar la repeticion del cuerpo del componente
