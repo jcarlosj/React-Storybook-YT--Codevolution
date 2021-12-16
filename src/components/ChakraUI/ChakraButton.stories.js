@@ -16,9 +16,30 @@ export default {
             
         ),
     ],
+    argTypes: {
+        variant: {
+            options: [ 'green', 'red' ],
+            control: { type: 'select' }
+        },
+        onClick: {
+            action: 'clicked'
+        }
+    }
 }
 
-// Stories: Historias o Variaciones del mismo componente
-export const Success = () => <Button variant='green'>Button</Button>;
-export const Danger = () => <Button variant='red'>Button</Button>;
+// Crea una plantilla para evitar la repeticion del cuerpo del componente
+const Template = args => <Button { ...args } />;        
+
+// Stories: Variaciones a partir de una plantilla. Args representan el estado del componente en cada historia
+export const SuccessButton = Template.bind({});
+SuccessButton.args = {
+    variant: 'green',
+    children: 'Success'
+}
+
+export const DangerButton = Template.bind({});
+DangerButton.args = {
+    variant: 'red',
+    children: 'Danger'
+}
 
