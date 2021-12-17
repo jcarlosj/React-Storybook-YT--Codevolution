@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider, ChakraProvider, theme, CSSReset, Box, Button } from '@chakra-ui/react';
+import { text, boolean } from '@storybook/addon-knobs';         //  Knobs: Permite editar accesorios dinámicamente usando la interfaz de usuario de Storybook. También puede usar Knobs como una variable dinámica dentro de las historias en Storybook.
 
 export default {
     title: 'Chakra/Button',  //   (Obligatorio): Nombre que se desplegara en el menu de Storybook
@@ -46,3 +47,4 @@ DangerButton.args = {
     children: 'Danger'
 }
 
+export const Knobs = () => <Button disabled={ boolean( 'Disabled', false ) }>{ text( 'Label', 'Button Label' ) }</Button> 

@@ -1,4 +1,6 @@
 import React from 'react';
+import { text, boolean } from '@storybook/addon-knobs';         //  Knobs: Permite editar accesorios dinámicamente usando la interfaz de usuario de Storybook. También puede usar Knobs como una variable dinámica dentro de las historias en Storybook.
+
 import Button from './Button';
 
 import { action, actions } from '@storybook/addon-actions'
@@ -15,7 +17,13 @@ export default {
 export const Primary = () => <Button onClick={ action( 'Primary Cliked!' ) } variant='primary'>Primary</Button>;
 export const Secondary = () => <Button variant='secondary' { ...actions( 'onClick', 'onMouseOver' ) } >Secondary</Button>;
 export const Success = () => <Button variant='success' onClick={ () => console.log( 'Success!' ) }>Success</Button>;
-export const Danger = () => <Button variant='danger' onClick={ () => console.log( 'Danger!' ) }>Danger</Button>;
+export const Danger = () => ( 
+    <Button
+        variant='danger' 
+        onClick={ () => console.log( 'Danger!' ) }
+        disabled={ boolean( 'Disabled', false ) }
+    >{ text( 'Label', 'Danger!' ) }</Button>
+);
 
 // Crea una plantilla para evitar la repeticion del cuerpo del componente
 const Template = args => <Button { ...args } />;        
