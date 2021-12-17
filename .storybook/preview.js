@@ -1,6 +1,8 @@
-import { addDecorator } from '@storybook/react';
+import { addDecorator,addParameters } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
 import { withKnobs } from '@storybook/addon-knobs';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';    //  Viewport Addon permite que sus historias se muestren en diferentes tamaños y diseños
+
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -19,3 +21,9 @@ export const parameters = {
 // Implementa un envoltorio usando un decorador
 addDecorator( ( storyFn, context ) => withConsole()( storyFn )( context ) );    // Permitira que los mensajes de consola se vean en el Addon de Acciones de Storybook e identifique el titulo del componente
 addDecorator( withKnobs );
+
+addParameters({
+  viewport: {
+    viewports: INITIAL_VIEWPORTS
+  }
+})
