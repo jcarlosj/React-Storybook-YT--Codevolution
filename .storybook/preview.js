@@ -1,3 +1,5 @@
+import '@storybook/addon-console';    // Permitira que los mensajes de consola se vean en el Addon de Acciones de Storybook
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
