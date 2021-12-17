@@ -14,13 +14,13 @@ export default {
 }
 
 // Stories: Historias o Variaciones del mismo componente
-export const Primary = () => <Button onClick={ action( 'Primary Cliked!' ) } variant='primary'>Primary</Button>;
+export const Primary = () => <Button onClick={ action( 'Primary Cliked!' ), () => console.log( 'Variable de entorno', process.env.STORYBOOK_THEME ) } variant='primary'>Primary</Button>;
 export const Secondary = () => <Button variant='secondary' { ...actions( 'onClick', 'onMouseOver' ) } >Secondary</Button>;
-export const Success = () => <Button variant='success' onClick={ () => console.log( 'Success!' ) }>Success</Button>;
+export const Success = () => <Button variant='success' onClick={ () => console.log( 'Success!', process.env.STORYBOOK_THEME ) }>Success</Button>;
 export const Danger = () => ( 
     <Button
         variant='danger' 
-        onClick={ () => console.log( 'Danger!' ) }
+        onClick={ () => console.log( 'Danger!', process.env.THEME  ) }
         disabled={ boolean( 'Disabled', false ) }
     >{ text( 'Label', 'Danger!' ) }</Button>
 );

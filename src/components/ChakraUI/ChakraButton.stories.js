@@ -47,4 +47,9 @@ DangerButton.args = {
     children: 'Danger'
 }
 
-export const Knobs = () => <Button disabled={ boolean( 'Disabled', false ) }>{ text( 'Label', 'Button Label' ) }</Button> 
+export const Knobs = () => (
+    <Button
+        disabled={ boolean( 'Disabled', false ) }
+        onClick={ () => console.log( 'STORYBOOK_THEME', process.env.STORYBOOK_THEME, 'THEME', process.env.THEME ) }
+    >{ text( 'Label', 'Button Label' ) }</Button> 
+)
