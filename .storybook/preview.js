@@ -1,4 +1,5 @@
-import '@storybook/addon-console';    // Permitira que los mensajes de consola se vean en el Addon de Acciones de Storybook
+import { addDecorator } from '@storybook/react';
+import { withConsole } from '@storybook/addon-console';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -13,3 +14,6 @@ export const parameters = {
       a[ 1 ].kind === b[ 1 ].kind ? 0 : a[ 1 ].id.localeCompare( b[ 1 ].id, undefined, { numeric: true } ),
   },
 }
+
+// Implementa un envoltorio usando un decorador
+addDecorator( ( storyFn, context ) => withConsole()( storyFn )( context ) );    // Permitira que los mensajes de consola se vean en el Addon de Acciones de Storybook e identifique el titulo del componente
