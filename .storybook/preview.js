@@ -1,5 +1,6 @@
 import { addDecorator } from '@storybook/react';
 import { withConsole } from '@storybook/addon-console';
+import { withKnobs } from '@storybook/addon-knobs';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -17,3 +18,4 @@ export const parameters = {
 
 // Implementa un envoltorio usando un decorador
 addDecorator( ( storyFn, context ) => withConsole()( storyFn )( context ) );    // Permitira que los mensajes de consola se vean en el Addon de Acciones de Storybook e identifique el titulo del componente
+addDecorator( withKnobs );
